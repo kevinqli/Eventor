@@ -3,33 +3,25 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_explore"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Explore" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_qrcode"
+            android:icon="@android:drawable/ic_menu_camera"
+            android:title="Scan a QR code" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Feeds">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/feeds_treehacks"
+                android:icon="@drawable/treehacks"
+                android:title="TreeHacks" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/feeds_stanford"
+                android:icon="@drawable/stanford"
+                android:title="Stanford Men's Basketball" />
         </menu>
     </item>
 
