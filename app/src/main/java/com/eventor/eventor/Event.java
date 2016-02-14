@@ -7,24 +7,44 @@ import java.util.*;
  */
 public class Event {
 
-    public static ArrayList<Event> events_data;
-    /*
-            new Event("TreeHacks","Best hackathon ever", new Date(2016,2,12,23,0)
-                    , new Date(2016,2,14,11,0), 25, 25)
-    */
+    public static List<Event> events_data = Arrays.asList(new Event[]{
+            new Event(
+                    "TreeHacks!",
+                    "Chillest hackathon.",
+                    new Date(2016, 1, 12),
+                    new Date(2016, 1, 14),
+                    37.4279209,
+                    -122.1764832
+            ),
+            new Event(
+                    "Men's Basketball vs. USC",
+                    "Buy your tickets!",
+                    new Date(2016, 1, 25),
+                    new Date(2016, 1, 25),
+                    37.4295915,
+                    -122.1627275
+            )
+    });
+    public static int getNewId() {
+        return events_data.size();
+    }
     public static void addEvent(Event event) {
         events_data.add(event);
     }
     private String eventName, eventDesc;
     private Date eventStart, eventEnd;
     private double latitude, longitude;
+    private int id;
 
     private static final int HALF_DAY = 12, MINUTES_IN_HOUR = 60;
 
     public Event() {
         this.eventName = "Unnamed Event";
+        this.eventDesc = "";
         this.eventStart = new Date();
         this.eventEnd = new Date();
+        id = getNewId();
+        events_data.add(this);
     }
     public Event(String eventName, String eventDesc,
                  Date eventStart, Date eventEnd, double latitude, double longitude) {
@@ -34,14 +54,36 @@ public class Event {
         this.eventEnd = eventEnd;
         this.latitude = latitude;
         this.longitude = longitude;
+        id = getNewId();
+        events_data.add(this);
     }
 
-    private void setLocation(double latitude, double longitude) {
+    public String getEventName() {
+        return eventName;
+    }
+
+    public String getEventDesc() {
+        return eventDesc;
+    }
+
+    public Date getEventStart() {
+        return eventStart;
+    }
+
+    public Date getEventEnd() { return eventEnd; }
+
+    public double getLatitude() { return latitude; }
+
+    public double getLongitude() { return longitude; }
+
+    public void setLocation(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    private void setName(String eventName) {
+
+
+    public void setName(String eventName) {
         this.eventName = eventName;
     }
 }

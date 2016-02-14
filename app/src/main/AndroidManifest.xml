@@ -27,8 +27,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".NewEventActivity"></activity>
         <activity
+=======
+
+
+
+        <activity android:name="com.eventor.eventor.NewEventActivity" ></activity>
+        <activity android:name="com.eventor.eventor.FriendsPageActivity"></activity>
+        <activity android:name="com.eventor.eventor.UserPageActivity"></activity>
+       <activity
+
+>>>>>>> 7b509e24a2be76c1b89b1eb5d4ea6f61f2b8f4fa
             android:name="com.google.zxing.client.android.CaptureActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
@@ -40,7 +51,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".EventsPageActivity"></activity>
+=======
+        <activity android:name=".DayActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+
+>>>>>>> 7b509e24a2be76c1b89b1eb5d4ea6f61f2b8f4fa
     </application>
 
 </manifest>
