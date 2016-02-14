@@ -35,7 +35,8 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name="com.eventor.eventor.UserPageActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".GroupStatsActivity"></activity>
+        <activity android:name=".GroupStatsActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
        <activity
             android:name="com.google.zxing.client.android.CaptureActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -53,7 +54,8 @@
             android:name=".DayActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".GroupPageActivity"></activity>
+        <activity android:name=".GroupPageActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

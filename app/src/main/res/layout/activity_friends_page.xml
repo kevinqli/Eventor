@@ -25,21 +25,16 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Friends"
-        android:textSize="40sp"
-        android:id="@+id/friendsLabel"
-        android:layout_below="@id/toolbar"
-        android:layout_centerHorizontal="true" />
+
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
         android:id="@+id/friendsTable"
-        android:layout_below="@+id/friendsLabel"
+        android:layout_below="@id/toolbar"
         android:paddingTop="20dip"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:stretchColumns="1">
     </TableLayout>
 

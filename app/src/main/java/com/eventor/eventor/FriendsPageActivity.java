@@ -1,5 +1,6 @@
 package com.eventor.eventor;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,7 +42,8 @@ public class FriendsPageActivity extends AppCompatActivity implements View.OnCli
         List<User> users = User.users_data;
         for (User user : users) {
             TableRow tr = new TableRow(this);
-            tr.setBackgroundResource(R.drawable.customborder);
+
+            tr.setBackgroundResource(R.drawable.customfriendbackground);
             tr.setOnClickListener(this);
             tr.setId(user.getId());
             ImageView img = new ImageView(this);
@@ -54,7 +56,8 @@ public class FriendsPageActivity extends AppCompatActivity implements View.OnCli
             tr.addView(img);
             TextView txt = new TextView(this);
             txt.setText(user.getUserName());
-            txt.setTextSize(30);
+            txt.setTextColor(Color.parseColor("#FFFFFF"));
+            txt.setTextSize(20);
             txt.setPadding(20, 20, 20, 20);
             tr.addView(txt);
             table.addView(tr);

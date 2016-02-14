@@ -7,4 +7,5 @@
     <color name="secondary_text_material_light">#f52020</color>
     <color name="primary_text_material_light">#c02929</color>
     <color name="titleColor">#BA2020</color>
+    <color name="backgroundBox">#009FE6</color>
 </resources>
