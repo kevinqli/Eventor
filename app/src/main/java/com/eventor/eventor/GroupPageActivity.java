@@ -16,11 +16,13 @@ public class GroupPageActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_page);
         TableLayout table = (TableLayout) findViewById(R.id.groupTable);
-        List<Event> events = Event.events_data;
-        for (Event event : events) {
+        Intent intent = getIntent();
+        Group group = Group.getGroup(intent.getIntExtra("id", -1));
+        List<Integer> events = group.getEventList();
+        for (Integer event : events) {
             TableRow tr = new TableRow(this);
             tr.setOnClickListener(this);
-            tr.setId(event.getId());
+            tr.setId(event);
             /*
             ImageView img = new ImageView(this);
             img.setMaxWidth(150);
@@ -32,7 +34,7 @@ public class GroupPageActivity extends AppCompatActivity implements View.OnClick
             tr.addView(img);
             */
             TextView txt = new TextView(this);
-            txt.setText(event.getEventName());
+            txt.setText(Event.getEvent(event).getEventName());
             txt.setTextSize(30);
             txt.setPadding(20, 20, 20, 20);
             tr.addView(txt);
