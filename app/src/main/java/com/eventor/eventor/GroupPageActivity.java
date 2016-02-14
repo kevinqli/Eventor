@@ -19,6 +19,12 @@ public class GroupPageActivity extends AppCompatActivity implements View.OnClick
         Intent intent = getIntent();
         Group group = Group.getGroup(intent.getIntExtra("id", -1));
         List<Integer> events = group.getEventList();
+
+        TextView title = (TextView) findViewById(R.id.groupLabel);
+        title.setText(group.getGroupTitle());
+        TextView description = (TextView) findViewById(R.id.groupDesc);
+        description.setText(group.getGroupDesc());
+        
         for (Integer event : events) {
             TableRow tr = new TableRow(this);
             tr.setOnClickListener(this);
