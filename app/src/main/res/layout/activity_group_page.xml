@@ -9,4 +9,42 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.eventor.eventor.GroupPageActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Groups"
+        android:textSize="40sp"
+        android:id="@+id/friendsLabel"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/groupTable"
+        android:layout_below="@+id/friendsLabel"
+        android:paddingTop="20dip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+        <!--
+
+        <TableRow
+            android:id="@+id/row1"
+            android:onClick="nextScreen">
+            <ImageView
+                android:id="@+id/profilePicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="40dp"
+                android:maxHeight="40dp"
+                android:src="@drawable/profilepicture" />
+            <TextView
+                android:layout_column="1"
+                android:textSize="30sp"
+                android:text="Kevin Li"
+                android:padding="3dip" />
+
+        </TableRow>
+        -->
+    </TableLayout>
 </RelativeLayout>
