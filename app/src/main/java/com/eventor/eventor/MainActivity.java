@@ -1,5 +1,6 @@
 package com.eventor.eventor;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.ActivityNotFoundException;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
@@ -34,6 +36,15 @@ public class MainActivity extends AppCompatActivity
         setContentView(com.eventor.eventor.R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(com.eventor.eventor.R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle(null);
+
+        Toolbar toolbarTop = (Toolbar) findViewById(R.id.toolbar);
+        TextView mTitle = (TextView) toolbarTop.findViewById(R.id.toolbar_title);
+
+        Typeface roboto = Typeface.createFromAsset(getApplication().getAssets(), "fonts/Roboto-Regular.ttf");
+
+        mTitle.setTypeface(roboto);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(com.eventor.eventor.R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
