@@ -5,6 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="title_activity_feed_page">feedPage</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -98,4 +99,7 @@
     <string name="title_activity_feeds_page">feedsPage</string>
     <string name="title_activity_qrcode">QRcode</string>
     <string name="scan">Scan</string>
+=======
+
+>>>>>>> 60ddb6e837ba9ffba8897e0e1ca7ecad51e19f86
 </resources>

@@ -18,6 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity
             android:name=".feedPage"
             android:label="@string/title_activity_feed_page"
@@ -30,6 +31,10 @@
             android:name=".QRcode"
             android:label="@string/title_activity_qrcode"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+=======
+        <activity android:name=".friends_page" />
+        <activity android:name=".userPage"></activity>
+>>>>>>> 60ddb6e837ba9ffba8897e0e1ca7ecad51e19f86
     </application>
 
 </manifest>
