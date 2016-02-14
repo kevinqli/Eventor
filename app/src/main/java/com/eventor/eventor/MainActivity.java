@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == com.eventor.eventor.R.id.nav_qrcode) {
+        if (id == R.id.nav_qrcode) {
             try {
                 Intent intent = new Intent("com.google.zxing.client.android.SCAN");
                 intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
@@ -124,6 +124,8 @@ public class MainActivity extends AppCompatActivity
             } catch (ActivityNotFoundException anfe) {
                 Log.e("onCreate", "Scanner Not Found", anfe);
             }
+        } else if (id == R.id.nav_friends) {
+            startActivity(new Intent(this, FriendsPageActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(com.eventor.eventor.R.id.drawer_layout);

@@ -14,6 +14,9 @@ public class UserPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(com.eventor.eventor.R.layout.activity_user_page);
 
+        Intent intent = getIntent();
+        User user = User.users_data.get(intent.getIntExtra("id", -1));
+
         Spinner following = (Spinner) findViewById(com.eventor.eventor.R.id.following);
         String[] followingItems = new String[] { "Following", "Stanford TreeHacks", "Stanford CS", "Stanford Football" };
         ArrayAdapter<String> followingAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, followingItems);

@@ -7,21 +7,21 @@ import android.content.Intent;
 
 import java.util.*;
 public class Group {
-    public static ArrayList<Group> groups_data;
+    public static List<Group> groups_data;
 
     public static void addGroup(Group group) {
         groups_data.add(group);
     }
 
     private String groupTitle, groupDesc;
-    private ArrayList<Integer> userList, eventList;
+    private List<Integer> userList, eventList;
 
     public Group() {
         this.groupTitle = "Unnamed Group";
         this.userList = new ArrayList<Integer>();
         this.eventList = new ArrayList<Integer>();
     }
-    public Group(String groupTitle, ArrayList<Integer> userList, ArrayList<Integer> eventList, String groupDesc) {
+    public Group(String groupTitle, List<Integer> userList, List<Integer> eventList, String groupDesc) {
         this.groupTitle = groupTitle;
         this.userList = userList;
         this.eventList = eventList;

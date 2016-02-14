@@ -7,11 +7,16 @@ import java.util.*;
  */
 public class Event {
 
-    public static ArrayList<Event> events_data;
-    /*
-            new Event("TreeHacks","Best hackathon ever", new Date(2016,2,12,23,0)
-                    , new Date(2016,2,14,11,0), 25, 25)
-    */
+    public static List<Event> events_data = Arrays.asList(new Event[]{
+            new Event(
+                    "TreeHacks!",
+                    "Chillest hackathon.",
+                    new Date(2016, 1, 12),
+                    new Date(2016, 1, 14),
+                    37.43,
+                    122.17
+            )
+    });
     public static void addEvent(Event event) {
         events_data.add(event);
     }
