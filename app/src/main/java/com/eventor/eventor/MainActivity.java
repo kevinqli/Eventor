@@ -73,6 +73,13 @@ public class MainActivity extends AppCompatActivity
         myCalendar.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(MaterialCalendarView widget, CalendarDay date, boolean selected) {
+                Intent intent = new Intent(getApplicationContext(), DayActivity.class);
+                Bundle extras = new Bundle();
+                extras.putString("EXTRA_USERNAME","my_username");
+                extras.putString("EXTRA_PASSWORD", "my_password");
+                intent.putExtras(extras);
+                startActivity(intent);
+
 
             }
         });
