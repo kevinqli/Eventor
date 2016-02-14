@@ -33,7 +33,13 @@ public class Event {
     public static void addEvent(Event event) {
         events_data.add(event);
     }
-    public static Event getEvent(int id) { return events_data.get(id); }
+    public static Event getEvent(int id) {
+        try {
+            return events_data.get(id);
+        } catch (IndexOutOfBoundsException e) {
+            return null;
+        }
+    }
     private String eventName, eventDesc;
     private Date eventStart, eventEnd;
     private double latitude, longitude;
@@ -78,6 +84,8 @@ public class Event {
     public double getLatitude() { return latitude; }
 
     public double getLongitude() { return longitude; }
+
+    public int getId() { return id; }
 
     public void setLocation(double latitude, double longitude) {
         this.latitude = latitude;

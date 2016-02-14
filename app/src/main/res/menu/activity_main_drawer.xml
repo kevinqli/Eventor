@@ -16,17 +16,10 @@
             android:title="Friends"/>
     </group>
 
-    <item android:title="Feeds">
-        <menu>
-            <item
-                android:id="@+id/feeds_treehacks"
-                android:icon="@drawable/treehacks"
-                android:title="TreeHacks" />
-            <item
-                android:id="@+id/feeds_stanford"
-                android:icon="@drawable/stanford"
-                android:title="Stanford Men's Basketball" />
-        </menu>
+    <item
+        android:title="Groups"
+        android:id="@+id/nav_groups">
+        <menu></menu>
     </item>
 
 </menu>

@@ -1,6 +1,7 @@
 package com.eventor.eventor;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.*;
@@ -19,6 +20,13 @@ public class UserPageActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         User user = User.getUser(intent.getIntExtra("id", -1));
+
+        ImageView pic = (ImageView) findViewById(R.id.profilePicture);
+        int id = getResources().getIdentifier(user.getImage(), "drawable", getPackageName());
+        pic.setImageResource(id);
+
+        TextView name = (TextView) findViewById(R.id.userLabel);
+        name.setText(user.getUserName());
 
         Spinner groupsSpinner = (Spinner) findViewById(com.eventor.eventor.R.id.groups);
         List<Integer> groups = user.getGroupList();

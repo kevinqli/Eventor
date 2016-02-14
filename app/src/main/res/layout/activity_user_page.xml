@@ -16,7 +16,7 @@
         android:adjustViewBounds="true"
         android:maxWidth="100dp"
         android:maxHeight="100dp"
-        android:src="@drawable/kevinliimage"
+        android:src="@drawable/profilepicture"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:text="Kevin Li"
+        android:text="Unnamed Person"
         android:padding="5dip"
         android:paddingTop="10dip"
         android:layout_below="@+id/profilePicture"

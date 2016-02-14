@@ -19,22 +19,31 @@ public class User {
                 "Kevin Li",
                 Arrays.asList(0, 1),
                 Arrays.asList(0, 1),
-                Arrays.asList(1)
+                Arrays.asList(1),
+                "kevinliimage"
         );
         new User(
                 "Jeffrey Zhang",
                 Arrays.asList(0),
                 Arrays.asList(0, 1),
-                Arrays.asList(0)
+                Arrays.asList(0),
+                "jeffreyzhangimage"
         );
     }
 
     private String userName;
     private List<Integer> eventList, groupList;
     private List<Integer> friendsList;
+    private String image;
     private final int id;
 
-    public static User getUser(int id) { return users_data.get(id); }
+    public static User getUser(int id) {
+        try {
+            return users_data.get(id);
+        } catch (IndexOutOfBoundsException e) {
+            return null;
+        }
+    }
 
     public static int getNewId() {
         return users_data.size();
@@ -49,15 +58,17 @@ public class User {
         this.eventList = new ArrayList<Integer>();
         this.groupList = new ArrayList<Integer>();
         this.friendsList = new ArrayList<Integer>();
+        this.image = "profilepicture";
         this.id = getNewId();
         addUser(this);
     }
     public User(String userName, List<Integer> eventList, List<Integer> groupList,
-                List<Integer> friendsList) {
+                List<Integer> friendsList, String image) {
         this.userName = userName;
         this.eventList = eventList;
         this.groupList = groupList;
         this.friendsList = friendsList;
+        this.image = image;
         this.id = getNewId();
         addUser(this);
     }
@@ -76,6 +87,10 @@ public class User {
 
     public List<Integer> getFriendsList() {
         return friendsList;
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public int getId() {

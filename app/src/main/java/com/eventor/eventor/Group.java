@@ -3,7 +3,6 @@ package com.eventor.eventor;
 /**
  * Created by jeffreyzhang on 2/13/16.
  */
-import android.content.Intent;
 
 import java.util.*;
 public class Group {
@@ -11,16 +10,18 @@ public class Group {
 
     static {
         new Group(
-                "TreeHacks",
+                "Stanford ACM",
                 Arrays.asList(0, 1),
                 Arrays.asList(0),
-                "Stanford University's hackathon. February 12th-14th, 2016."
+                "ACM brings together students with an interest in building cool things with CS.",
+                "acm"
         );
         new Group(
                 "Stanford Men's Basketball",
                 Arrays.asList(0),
                 Arrays.asList(1),
-                "Check us out on Twitter @Stanfordbball!"
+                "Check us out on Twitter @Stanfordbball!",
+                "stanford"
         );
     }
 
@@ -28,28 +29,38 @@ public class Group {
         groups_data.add(group);
     }
 
-    public static Group getGroup(int id) { return groups_data.get(id); }
+    public static Group getGroup(int id) {
+        try {
+            return groups_data.get(id);
+        } catch (IndexOutOfBoundsException e) {
+            return null;
+        }
+    }
 
-    public static int getId() { return groups_data.size(); }
+    public static int getNewId() { return groups_data.size(); }
 
     private String groupTitle, groupDesc;
     private List<Integer> userList, eventList;
+    private String icon;
+
     private int id;
 
     public Group() {
         this.groupTitle = "Unnamed Group";
         this.userList = new ArrayList<Integer>();
         this.eventList = new ArrayList<Integer>();
+        this.icon = "ic_menu_allfriends";
         this.groupDesc = "";
-        this.id = getId();
+        this.id = getNewId();
         addGroup(this);
     }
-    public Group(String groupTitle, List<Integer> userList, List<Integer> eventList, String groupDesc) {
+    public Group(String groupTitle, List<Integer> userList, List<Integer> eventList, String groupDesc, String icon) {
         this.groupTitle = groupTitle;
         this.userList = userList;
         this.eventList = eventList;
         this.groupDesc = groupDesc;
-        this.id = getId();
+        this.icon = icon;
+        this.id = getNewId();
         addGroup(this);
     }
     /* add an event to the group to host */
@@ -68,6 +79,10 @@ public class Group {
     public List<Integer> getUserList() { return userList; }
 
     public List<Integer> getEventList() { return eventList; }
+
+    public String getIcon() { return icon; }
+
+    public int getId() { return id; }
 
 }
 

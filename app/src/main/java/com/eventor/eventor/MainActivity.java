@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.SubMenu;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,7 +16,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.content.ActivityNotFoundException;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +26,7 @@ import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -65,6 +66,16 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(com.eventor.eventor.R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Menu menu = navigationView.getMenu();
+
+        MenuItem item = menu.findItem(R.id.nav_groups);
+        SubMenu sub = item.getSubMenu();
+        List<Group> groups = Group.groups_data;
+        for (Group group : groups) {
+            MenuItem subItem= sub.add(Menu.NONE, group.getId(), Menu.NONE, group.getGroupTitle());
+            subItem.setIcon(getResources().getIdentifier(group.getIcon(),"drawable",getPackageName()));
+        }
 
         initializeCalendar();
     }
@@ -135,6 +146,9 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Log.d("name", item.toString());
+        Log.d("id", Integer.toString(id));
+
         if (id == R.id.nav_qrcode) {
             try {
                 Intent intent = new Intent("com.google.zxing.client.android.SCAN");
@@ -145,6 +159,10 @@ public class MainActivity extends AppCompatActivity
             }
         } else if (id == R.id.nav_friends) {
             startActivity(new Intent(this, FriendsPageActivity.class));
+        } else if (Group.getGroup(id) != null) {
+            Intent intent = new Intent(this, GroupPageActivity.class);
+            intent.putExtra("id", id);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(com.eventor.eventor.R.id.drawer_layout);
