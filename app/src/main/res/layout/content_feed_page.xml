@@ -7,7 +7,7 @@
     tools:showIn="@layout/activity_feed_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vibe.vibe.feedPage">
+    tools:context="com.eventor.eventor.feedPage">
 
     <TextView
         android:layout_width="wrap_content"

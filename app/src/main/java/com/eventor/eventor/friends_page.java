@@ -1,4 +1,4 @@
-package com.vibe.vibe;
+package com.eventor.eventor;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ public class friends_page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_friends_page);
+        setContentView(com.eventor.vibe.R.layout.activity_friends_page);
     }
 
     public void nextScreen(View view) {
