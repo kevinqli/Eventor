@@ -98,4 +98,5 @@
     <string name="title_activity_feeds_page">feedsPage</string>
     <string name="title_activity_qrcode">QRcode</string>
     <string name="scan">Scan</string>
+    <string name="title_activity_day">DayActivity</string>
 </resources>
