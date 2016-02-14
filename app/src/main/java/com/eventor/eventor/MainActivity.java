@@ -1,4 +1,5 @@
 package com.eventor.eventor;
+import android.graphics.Color;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.os.Bundle;
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity
 
     private void initializeCalendar() {
         myCalendar = (MaterialCalendarView) findViewById(R.id.calendarView);
+        Color myColor = new Color();
+        myCalendar.setSelectionColor(myColor.rgb(245, 32, 32));
         myCalendar.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(MaterialCalendarView widget, CalendarDay date, boolean selected) {
