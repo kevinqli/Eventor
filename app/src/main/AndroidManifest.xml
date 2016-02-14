@@ -31,8 +31,10 @@
 
         <activity android:name="com.eventor.eventor.NewEventActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name="com.eventor.eventor.FriendsPageActivity"></activity>
-        <activity android:name="com.eventor.eventor.UserPageActivity"></activity>
+        <activity android:name="com.eventor.eventor.FriendsPageActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name="com.eventor.eventor.UserPageActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".GroupStatsActivity"></activity>
        <activity
             android:name="com.google.zxing.client.android.CaptureActivity"
@@ -46,11 +48,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".EventsPageActivity" />
+        <activity android:name=".EventsPageActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".DayActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GroupStatsActivity" />
+
         <activity android:name=".GroupPageActivity"></activity>
     </application>
 
