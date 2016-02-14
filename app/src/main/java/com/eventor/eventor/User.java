@@ -32,6 +32,8 @@ public class User {
     private List<Integer> friendsList;
     private final int id;
 
+    public static User getUser(int id) { return users_data.get(id); }
+
     public static int getNewId() {
         return users_data.size();
     }
