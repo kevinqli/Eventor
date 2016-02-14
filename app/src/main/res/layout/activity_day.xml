@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.eventor.eventor.DayActivity"
-    android:theme="@style/AppTheme.NoActionBar">
+    android:theme="@style/AppTheme.NoActionBar"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
 
@@ -23,7 +24,198 @@
             android:layout_gravity="left"
             android:id="@+id/toolbar_title" />
 
+        <ImageButton
+            android:id="@+id/toolbar_feed"
+            android:layout_width="25dp" android:layout_height="25dp"
+            android:background="@drawable/feedlogo"
+            android:layout_gravity="right|center_vertical"
+            android:clickable="true"
+            android:layout_marginRight="20dp"/>
+
+        <ImageButton
+            android:id="@+id/toolbar_friends"
+            android:layout_width="21dp" android:layout_height="25dp"
+            android:background="@drawable/friendslogo"
+            android:layout_gravity="right|center_vertical"
+            android:clickable="true"
+            android:layout_marginRight="20dp"/>
+
+
+        <ImageButton
+            android:id="@+id/toolbar_search"
+            android:layout_width="25dp" android:layout_height="25dp"
+            android:background="@drawable/searchlogo"
+            android:layout_gravity="right|center_vertical"
+            android:clickable="true"
+            android:layout_marginRight="20dp"/>
+
+
     </android.support.v7.widget.Toolbar>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorPrimary">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:id="@+id/weekdays">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20dp"
+                android:text="S"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:text="M"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:text="T"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:text="W"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:text="T"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:text="F"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:text="S"
+                android:textColor="@color/colorActionBarText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:id="@+id/numbers"
+            android:layout_below="@+id/weekdays">
+
+
+            <TextView
+                android:id="@+id/sunday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:id="@+id/monday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:id="@+id/tuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:id="@+id/wednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:id="@+id/thursday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:id="@+id/friday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorActionBarText" />
+
+            <TextView
+                android:id="@+id/saturday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorActionBarText" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/myDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="2dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/colorActionBarText"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

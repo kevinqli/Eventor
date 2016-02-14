@@ -24,6 +24,9 @@ import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -73,10 +76,16 @@ public class MainActivity extends AppCompatActivity
         myCalendar.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(MaterialCalendarView widget, CalendarDay date, boolean selected) {
+                SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+                Date d = date.getDate();
+                String dayOfTheWeek = sdf.format(d);
+
                 Intent intent = new Intent(getApplicationContext(), DayActivity.class);
                 Bundle extras = new Bundle();
-                extras.putString("EXTRA_USERNAME","my_username");
-                extras.putString("EXTRA_PASSWORD", "my_password");
+                extras.putString("YEAR",Integer.toString(date.getYear()));
+                extras.putString("MONTH", Integer.toString(date.getMonth()));
+                extras.putString("DAY", Integer.toString(date.getDay()));
+                extras.putString("DAYOFWEEK", dayOfTheWeek);
                 intent.putExtras(extras);
                 startActivity(intent);
 
