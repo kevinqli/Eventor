@@ -7,24 +7,26 @@ import java.util.*;
  */
 public class Event {
 
-    public static List<Event> events_data = Arrays.asList(new Event[]{
-            new Event(
-                    "TreeHacks!",
-                    "Chillest hackathon.",
-                    new Date(2016, 1, 12),
-                    new Date(2016, 1, 14),
-                    37.4279209,
-                    -122.1764832
-            ),
-            new Event(
-                    "Men's Basketball vs. USC",
-                    "Buy your tickets!",
-                    new Date(2016, 1, 25),
-                    new Date(2016, 1, 25),
-                    37.4295915,
-                    -122.1627275
-            )
-    });
+    public static List<Event> events_data = new ArrayList<Event>();
+
+    static {
+        new Event(
+                "TreeHacks!",
+                "Chillest hackathon.",
+                new Date(2016, 1, 12),
+                new Date(2016, 1, 14),
+                37.4279209,
+                -122.1764832
+        );
+        new Event(
+                "Men's Basketball vs. USC",
+                "Buy your tickets!",
+                new Date(2016, 1, 25),
+                new Date(2016, 1, 25),
+                37.4295915,
+                -122.1627275
+        );
+    }
     public static int getNewId() {
         return events_data.size();
     }

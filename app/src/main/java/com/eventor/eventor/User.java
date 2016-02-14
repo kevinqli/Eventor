@@ -12,20 +12,22 @@ public class User {
 
     public static int me = 0;
 
-    public static List<User> users_data = Arrays.asList(new User[]{
-            new User(
-                    "Kevin Li",
-                    Arrays.asList(new Integer[]{0, 1}),
-                    Arrays.asList(new Integer[]{0, 1}),
-                    Arrays.asList(new Integer[]{1, 2, 3})
-            ),
-            new User(
-                    "Jeffrey Zhang",
-                    Arrays.asList(new Integer[]{0}),
-                    Arrays.asList(new Integer[]{0, 1}),
-                    Arrays.asList(new Integer[]{0})
-            )
-    });
+    public static List<User> users_data = new ArrayList<User>();
+
+    static {
+        new User(
+                "Kevin Li",
+                Arrays.asList(0, 1),
+                Arrays.asList(0, 1),
+                Arrays.asList(1)
+        );
+        new User(
+                "Jeffrey Zhang",
+                Arrays.asList(0),
+                Arrays.asList(0, 1),
+                Arrays.asList(0)
+        );
+    }
 
     private String userName;
     private List<Integer> eventList, groupList;

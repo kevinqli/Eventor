@@ -20,15 +20,15 @@ public class UserPageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         User user = User.getUser(intent.getIntExtra("id", -1));
 
-        Spinner following = (Spinner) findViewById(com.eventor.eventor.R.id.following);
+        Spinner groupsSpinner = (Spinner) findViewById(com.eventor.eventor.R.id.groups);
         List<Integer> groups = user.getGroupList();
         List<String> followingItems = new ArrayList<String>();
         for (Integer group : groups) {
             followingItems.add(Group.getGroup(group).getGroupTitle());
         }
         ArrayAdapter<String> followingAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, followingItems);
-        following.setAdapter(followingAdapter);
-        following.setOnItemSelectedListener(new OnItemSelectedListener() {
+        groupsSpinner.setAdapter(followingAdapter);
+        groupsSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -40,15 +40,15 @@ public class UserPageActivity extends AppCompatActivity {
             }
         });
 
-        Spinner events = (Spinner) findViewById(com.eventor.eventor.R.id.events);
-        List<Integer> eventsList = user.getEventList();
+        Spinner eventSpinner = (Spinner) findViewById(com.eventor.eventor.R.id.events);
+        List<Integer> events = user.getEventList();
         List<String> eventsItems = new ArrayList<String>();
-        for (Integer event : eventsList) {
+        for (Integer event : events) {
             eventsItems.add(Event.getEvent(event).getEventName());
         }
         ArrayAdapter<String> eventsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, eventsItems);
-        following.setAdapter(eventsAdapter);
-        following.setOnItemSelectedListener(new OnItemSelectedListener() {
+        eventSpinner.setAdapter(eventsAdapter);
+        eventSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
