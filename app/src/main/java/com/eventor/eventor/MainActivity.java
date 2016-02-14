@@ -1,4 +1,5 @@
 package com.eventor.eventor;
+import android.graphics.Color;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,8 +18,14 @@ import android.view.MenuItem;
 import android.content.ActivityNotFoundException;
 import android.widget.Toast;
 
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    MaterialCalendarView myCalendar;
 
     static final String ACTION_SCAN = "com.google.zxing.client.android.SCA";
     @Override
@@ -44,6 +51,20 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(com.eventor.eventor.R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        initializeCalendar();
+    }
+
+    private void initializeCalendar() {
+        myCalendar = (MaterialCalendarView) findViewById(R.id.calendarView);
+        Color myColor = new Color();
+        myCalendar.setSelectionColor(myColor.rgb(245, 32, 32));
+        myCalendar.setOnDateChangedListener(new OnDateSelectedListener() {
+            @Override
+            public void onDateSelected(MaterialCalendarView widget, CalendarDay date, boolean selected) {
+
+            }
+        });
     }
 
     @Override
