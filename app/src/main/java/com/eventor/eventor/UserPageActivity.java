@@ -7,6 +7,7 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.view.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserPageActivity extends AppCompatActivity {
@@ -21,7 +22,7 @@ public class UserPageActivity extends AppCompatActivity {
 
         Spinner following = (Spinner) findViewById(com.eventor.eventor.R.id.following);
         List<Integer> groups = user.getGroupList();
-        List<String> followingItems = new List<String>;
+        List<String> followingItems = new ArrayList<String>();
         for (Integer group : groups) {
             followingItems.add(Group.getGroup(group).getGroupTitle());
         }
@@ -40,7 +41,11 @@ public class UserPageActivity extends AppCompatActivity {
         });
 
         Spinner events = (Spinner) findViewById(com.eventor.eventor.R.id.events);
-        String[] eventsItems = new String[] { "Upcoming Events", "Stanford TreeHacks", "CS Career Fair", "Stanford vs. Cal" };
+        List<Integer> eventsList = user.getEventList();
+        List<String> eventsItems = new ArrayList<String>();
+        for (Integer event : eventsList) {
+            eventsItems.add(Event.getEvent(event).getEventName());
+        }
         ArrayAdapter<String> eventsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, eventsItems);
         following.setAdapter(eventsAdapter);
         following.setOnItemSelectedListener(new OnItemSelectedListener() {
