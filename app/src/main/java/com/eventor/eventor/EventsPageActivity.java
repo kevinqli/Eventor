@@ -3,6 +3,7 @@ package com.eventor.eventor;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 
@@ -19,7 +20,8 @@ public class EventsPageActivity extends AppCompatActivity {
         final TextView eventDescription = (TextView) findViewById(R.id.description);
 
         Intent intent = getIntent();
-        Event event = Event.getEvent(intent.getIntExtra("id", -1));
+        Event event = Event.getEvent(intent.getIntExtra("ITEMINDEX", -1));
+
 
         eventTitle.setText(event.getEventName());
         eventDate.setText(event.getEventStart().getDate() + " to " + event.getEventEnd().getDate());

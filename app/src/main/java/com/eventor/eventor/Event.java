@@ -13,8 +13,8 @@ public class Event {
         new Event(
                 "TreeHacks!",
                 "Chillest hackathon.",
-                new Date(2016, 1, 12),
-                new Date(2016, 1, 14),
+                new Date(2016, 1, 12, 8, 0),
+                new Date(2016, 1, 12, 19, 30),
                 37.4279209,
                 -122.1764832
         );

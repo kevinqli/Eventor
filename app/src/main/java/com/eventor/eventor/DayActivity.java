@@ -1,11 +1,16 @@
 package com.eventor.eventor;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -51,6 +56,41 @@ public class DayActivity extends AppCompatActivity {
         mTitle.setTypeface(roboto);
 
         fillGridNumbers(day, month, year, startingDay);
+
+        fillEventDayOne();
+
+    }
+
+    public void toFirstEvent(View v){
+        Log.v("test", "this executes here");
+        Intent intent = new Intent(this, EventsPageActivity.class);
+        intent.putExtra("ITEMINDEX", 0);
+        Log.v("test", "processed correctly");
+        startActivity(intent);
+    }
+
+    private void fillEventDayOne(){
+        Event firstEvent = Event.events_data.get(0);
+
+        TextView title = (TextView) findViewById(R.id.title);
+        TextView description = (TextView) findViewById(R.id.description);
+        TextView startTime = (TextView) findViewById(R.id.startTime);
+        TextView endTime = (TextView) findViewById(R.id.endTime);
+
+        title.setText(firstEvent.getEventName());
+        description.setText(firstEvent.getEventDesc());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
+        Date d = firstEvent.getEventStart();
+        String startTimeText = sdf.format(d);
+
+        Date d2 = firstEvent.getEventEnd();
+        String endTimeText = sdf.format(d2);
+
+
+        startTime.setText(startTimeText);
+        endTime.setText(endTimeText);
+
 
     }
 
@@ -122,6 +162,10 @@ public class DayActivity extends AppCompatActivity {
         myDay.setText(startingDay + "   " + monthText + " " + day + ", " + year);
     }
 
+    public void toFriends(View v){
+        startActivity(new Intent(this, FriendsPageActivity.class));
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
@@ -130,6 +174,8 @@ public class DayActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 }
