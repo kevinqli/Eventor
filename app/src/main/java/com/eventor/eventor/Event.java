@@ -1,17 +1,20 @@
 
 package com.eventor.eventor;
 import java.util.Date;
-
+import java.util.*;
 /**
  * Created by jeffreyzhang on 2/13/16.
  */
 public class Event {
 
-    public static Event[] events_data = {
+    public static ArrayList<Event> events_data;
+    /*
             new Event("TreeHacks","Best hackathon ever", new Date(2016,2,12,23,0)
                     , new Date(2016,2,14,11,0), 25, 25)
-    };
-
+    */
+    public static void addEvent(Event event) {
+        events_data.add(event);
+    }
     private String eventName, eventDesc;
     private Date eventStart, eventEnd;
     private double latitude, longitude;
