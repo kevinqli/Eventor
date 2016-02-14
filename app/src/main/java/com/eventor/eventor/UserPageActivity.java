@@ -7,6 +7,8 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.view.*;
 
+import java.util.List;
+
 public class UserPageActivity extends AppCompatActivity {
 
     @Override
@@ -15,10 +17,14 @@ public class UserPageActivity extends AppCompatActivity {
         setContentView(com.eventor.eventor.R.layout.activity_user_page);
 
         Intent intent = getIntent();
-        User user = User.users_data.get(intent.getIntExtra("id", -1));
+        User user = User.getUser(intent.getIntExtra("id", -1));
 
         Spinner following = (Spinner) findViewById(com.eventor.eventor.R.id.following);
-        String[] followingItems = new String[] { "Following", "Stanford TreeHacks", "Stanford CS", "Stanford Football" };
+        List<Integer> groups = user.getGroupList();
+        List<String> followingItems = new List<String>;
+        for (Integer group : groups) {
+            followingItems.add(Group.getGroup(group).getGroupTitle());
+        }
         ArrayAdapter<String> followingAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, followingItems);
         following.setAdapter(followingAdapter);
         following.setOnItemSelectedListener(new OnItemSelectedListener() {

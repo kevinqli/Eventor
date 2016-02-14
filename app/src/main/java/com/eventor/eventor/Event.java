@@ -31,6 +31,7 @@ public class Event {
     public static void addEvent(Event event) {
         events_data.add(event);
     }
+    public static Event getEvent(int id) { return events_data.get(id); }
     private String eventName, eventDesc;
     private Date eventStart, eventEnd;
     private double latitude, longitude;
