@@ -21,6 +21,9 @@ public class EventsPageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Event event = Event.getEvent(intent.getIntExtra("id", -1));
 
-
+        eventTitle.setText(event.getEventName());
+        eventDate.setText(event.getEventStart().getDate() + " to " + event.getEventEnd().getDate());
+        eventLocation.setText("Stanford");
+        eventDescription.setText(event.getEventDesc());
     }
 }
