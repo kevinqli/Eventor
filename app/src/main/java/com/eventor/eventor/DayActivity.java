@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -59,15 +60,18 @@ public class DayActivity extends AppCompatActivity {
 
         fillEventDayOne();
 
+        LinearLayout app_layer = (LinearLayout) findViewById (R.id.myFirstEvent);
+        app_layer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DayActivity.this, EventsPageActivity.class);
+                intent.putExtra("ITEMINDEX", 0);
+                startActivity(intent);
+            }
+        });
+
     }
 
-    public void toFirstEvent(View v){
-        Log.v("test", "this executes here");
-        Intent intent = new Intent(this, EventsPageActivity.class);
-        intent.putExtra("ITEMINDEX", 0);
-        Log.v("test", "processed correctly");
-        startActivity(intent);
-    }
 
     private void fillEventDayOne(){
         Event firstEvent = Event.events_data.get(0);
