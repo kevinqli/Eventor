@@ -25,5 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.prolificinteractive:material-calendarview:1.2.0'
-    compile files('C:/Users/kevinqli/AndroidStudioProjects/Eventor/libs/mpandroidchartlibrary-2-1-6.jar')
+    compile files('/Users/jeffreyzhang/Eventor/libs/mpandroidchartlibrary-2-1-6.jar')
 }

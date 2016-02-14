@@ -65,7 +65,7 @@ public class DayActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DayActivity.this, EventsPageActivity.class);
-                intent.putExtra("ITEMINDEX", 0);
+                intent.putExtra("id", 0);
                 startActivity(intent);
             }
         });
