@@ -1,4 +1,4 @@
-package com.vibe.vibe;
+package com.eventor.eventor;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -35,7 +35,7 @@ public class NewEventActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_event);
+        setContentView(com.eventor.vibe.R.layout.activity_new_event);
         setTitle("New Event");
 
         dateFormatter = new SimpleDateFormat("EEE, MMM dd, yyyy", Locale.US);
@@ -47,16 +47,16 @@ public class NewEventActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void findViewsById() {
-        fromDateEtxt = (EditText) findViewById(R.id.etxt_fromdate);
+        fromDateEtxt = (EditText) findViewById(com.eventor.vibe.R.id.etxt_fromdate);
         fromDateEtxt.setInputType(InputType.TYPE_NULL);
 
-        toDateEtxt = (EditText) findViewById(R.id.etxt_todate);
+        toDateEtxt = (EditText) findViewById(com.eventor.vibe.R.id.etxt_todate);
         toDateEtxt.setInputType(InputType.TYPE_NULL);
 
-        fromTimeEtxt = (EditText) findViewById(R.id.etxt_fromtime);
+        fromTimeEtxt = (EditText) findViewById(com.eventor.vibe.R.id.etxt_fromtime);
         fromTimeEtxt.setInputType(InputType.TYPE_NULL);
 
-        toTimeEtxt = (EditText) findViewById(R.id.etxt_totime);
+        toTimeEtxt = (EditText) findViewById(com.eventor.vibe.R.id.etxt_totime);
         toTimeEtxt.setInputType(InputType.TYPE_NULL);
     }
 

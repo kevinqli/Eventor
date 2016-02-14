@@ -1,4 +1,4 @@
-package com.vibe.vibe;
+package com.eventor.eventor;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,11 +12,11 @@ public class feedsPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feeds_page);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(com.eventor.vibe.R.layout.activity_feeds_page);
+        Toolbar toolbar = (Toolbar) findViewById(com.eventor.vibe.R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(com.eventor.vibe.R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

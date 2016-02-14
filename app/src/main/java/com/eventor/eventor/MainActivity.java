@@ -17,13 +17,9 @@ import android.view.MenuItem;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.app.AlertDialog;
-import android.widget.CalendarView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    CalendarView calendarView;
 
     static final String ACTION_SCAN = "com.google.zxing.client.android.SCA";
     @Override
@@ -49,20 +45,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        initializeCalendar();
-
-    }
-
-    private void initializeCalendar(){
-        calendarView = (CalendarView) findViewById(R.id.calendar);
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth){
-                Toast.makeText(getApplicationContext(), dayOfMonth + " ", Toast.LENGTH_SHORT).show();
-
-            }
-        });
     }
 
     @Override
@@ -73,8 +55,6 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-
-
     }
 
     @Override

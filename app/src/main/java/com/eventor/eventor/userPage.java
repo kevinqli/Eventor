@@ -1,4 +1,4 @@
-package com.vibe.vibe;
+package com.eventor.eventor;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +12,9 @@ public class userPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_page);
+        setContentView(com.eventor.vibe.R.layout.activity_user_page);
 
-        Spinner following = (Spinner) findViewById(R.id.following);
+        Spinner following = (Spinner) findViewById(com.eventor.vibe.R.id.following);
         String[] followingItems = new String[] { "Following", "Stanford TreeHacks", "Stanford CS", "Stanford Football" };
         ArrayAdapter<String> followingAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, followingItems);
         following.setAdapter(followingAdapter);
@@ -30,7 +30,7 @@ public class userPage extends AppCompatActivity {
             }
         });
 
-        Spinner events = (Spinner) findViewById(R.id.events);
+        Spinner events = (Spinner) findViewById(com.eventor.vibe.R.id.events);
         String[] eventsItems = new String[] { "Upcoming Events", "Stanford TreeHacks", "CS Career Fair", "Stanford vs. Cal" };
         ArrayAdapter<String> eventsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, eventsItems);
         following.setAdapter(eventsAdapter);
@@ -46,7 +46,7 @@ public class userPage extends AppCompatActivity {
             }
         });
 
-        Button firstButton = (Button) findViewById(R.id.friendsButton);
+        Button firstButton = (Button) findViewById(com.eventor.vibe.R.id.friendsButton);
         firstButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
