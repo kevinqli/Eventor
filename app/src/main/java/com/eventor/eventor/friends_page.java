@@ -10,7 +10,7 @@ public class friends_page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.eventor.vibe.R.layout.activity_friends_page);
+        setContentView(com.eventor.eventor.R.layout.activity_friends_page);
     }
 
     public void nextScreen(View view) {
