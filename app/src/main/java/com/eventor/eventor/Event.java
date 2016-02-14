@@ -7,6 +7,7 @@ import java.util.*;
  */
 public class Event {
 
+    //Include number of people who have RSVP'ed After
     public static List<Event> events_data = new ArrayList<Event>();
 
     static {

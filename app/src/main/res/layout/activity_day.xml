@@ -55,7 +55,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="85dp"
         android:background="@color/colorPrimary">
 
         <LinearLayout
@@ -142,8 +142,8 @@
                 android:id="@+id/sunday"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:textSize="20sp"
                 android:textColor="@color/colorActionBarText" />
 
@@ -151,8 +151,8 @@
                 android:id="@+id/monday"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:textSize="20sp"
                 android:textColor="@color/colorActionBarText" />
 
@@ -160,8 +160,8 @@
                 android:id="@+id/tuesday"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:textSize="20dp"
                 android:textColor="@color/colorActionBarText" />
 
@@ -169,8 +169,8 @@
                 android:id="@+id/wednesday"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:textSize="20sp"
                 android:textColor="@color/colorActionBarText" />
 
@@ -178,8 +178,8 @@
                 android:id="@+id/thursday"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:textSize="20sp"
                 android:textColor="@color/colorActionBarText" />
 
@@ -187,8 +187,8 @@
                 android:id="@+id/friday"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:textSize="20sp"
                 android:textColor="@color/colorActionBarText" />
 
@@ -196,8 +196,8 @@
                 android:id="@+id/saturday"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:textSize="20sp"
                 android:textColor="@color/colorActionBarText" />
 
@@ -209,7 +209,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:paddingBottom="2dp"
+            android:paddingBottom="5dp"
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="@color/colorActionBarText"
