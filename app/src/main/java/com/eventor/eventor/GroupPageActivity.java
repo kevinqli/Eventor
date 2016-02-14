@@ -15,7 +15,7 @@ public class GroupPageActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_page);
-        TableLayout table = (TableLayout) findViewById(R.id.groupTable);
+        TableLayout table = (TableLayout) findViewById(R.id.eventTable);
         Intent intent = getIntent();
         Group group = Group.getGroup(intent.getIntExtra("id", -1));
         List<Integer> events = group.getEventList();
@@ -24,7 +24,7 @@ public class GroupPageActivity extends AppCompatActivity implements View.OnClick
         title.setText(group.getGroupTitle());
         TextView description = (TextView) findViewById(R.id.groupDesc);
         description.setText(group.getGroupDesc());
-        
+
         for (Integer event : events) {
             TableRow tr = new TableRow(this);
             tr.setOnClickListener(this);
