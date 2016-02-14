@@ -2,9 +2,12 @@ package com.eventor.eventor;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.InputType;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -38,6 +41,21 @@ public class NewEventActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(com.eventor.eventor.R.layout.activity_new_event);
         setTitle("New Event");
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if(toolbar != null) {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setTitle(null);
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+        Toolbar toolbarTop = (Toolbar) findViewById(R.id.toolbar);
+        TextView mTitle = (TextView) toolbarTop.findViewById(R.id.toolbar_title);
+
+        Typeface roboto = Typeface.createFromAsset(getApplication().getAssets(), "fonts/Roboto-Regular.ttf");
+
+        mTitle.setTypeface(roboto);
 
         dateFormatter = new SimpleDateFormat("EEE, MMM dd, yyyy", Locale.US);
         timeFormatter = new SimpleDateFormat("h:mm aa", Locale.US);
@@ -120,5 +138,14 @@ public class NewEventActivity extends AppCompatActivity implements View.OnClickL
         } else if (view == toTimeEtxt) {
             toTimePickerDialog.show();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if(itemId == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

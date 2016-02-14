@@ -30,7 +30,8 @@
 
 
 
-        <activity android:name="com.eventor.eventor.NewEventActivity" ></activity>
+        <activity android:name="com.eventor.eventor.NewEventActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name="com.eventor.eventor.FriendsPageActivity"></activity>
         <activity android:name="com.eventor.eventor.UserPageActivity"></activity>
        <activity
