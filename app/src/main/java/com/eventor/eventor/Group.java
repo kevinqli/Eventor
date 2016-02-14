@@ -7,7 +7,22 @@ import android.content.Intent;
 
 import java.util.*;
 public class Group {
-    public static List<Group> groups_data;
+    public static List<Group> groups_data = new ArrayList<Group>();
+
+    static {
+        new Group(
+                "TreeHacks",
+                Arrays.asList(0, 1),
+                Arrays.asList(0),
+                "Stanford University's hackathon. February 12th-14th, 2016."
+        );
+        new Group(
+                "Stanford Men's Basketball",
+                Arrays.asList(0),
+                Arrays.asList(1),
+                "Check us out on Twitter @Stanfordbball!"
+        );
+    }
 
     public static void addGroup(Group group) {
         groups_data.add(group);

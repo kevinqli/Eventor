@@ -40,11 +40,11 @@
         android:layout_marginTop="10dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/following"
-        android:layout_alignEnd="@+id/following" />
+        android:layout_alignRight="@+id/groups"
+        android:layout_alignEnd="@+id/groups" />
 
     <Spinner
-        android:id="@+id/following"
+        android:id="@+id/groups"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:spinnerMode="dropdown"
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:spinnerMode="dropdown"
-        android:layout_below="@+id/following"
+        android:layout_below="@+id/groups"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp" />
