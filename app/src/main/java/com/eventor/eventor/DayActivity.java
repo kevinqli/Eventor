@@ -102,6 +102,7 @@ public class DayActivity extends AppCompatActivity {
         int iYear = Integer.parseInt(year);
         int iMonth = Integer.parseInt(month);
         int iDay = Integer.parseInt(day);
+        Log.v("test", month);
 
 
         Calendar mycal = new GregorianCalendar(iYear, iMonth, iDay);

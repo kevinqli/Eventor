@@ -27,7 +27,7 @@ public class EventsPageActivity extends AppCompatActivity {
         Event event = Event.getEvent(intent.getIntExtra("ITEMINDEX", -1));
 
         SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
-        SimpleDateFormat sdf2 = new SimpleDateFormat("MM.dd.yyyy");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("MM/dd");
 
         Date d = event.getEventStart();
         String startTimeText = sdf.format(d);
@@ -40,8 +40,8 @@ public class EventsPageActivity extends AppCompatActivity {
 
         eventTitle.setText(event.getEventName());
         eventDate.setText(startDateText + " to " + endDateText);
-        eventDate.setText(startTimeText + " to " + endTimeText);
-        eventLocation.setText("Stanford");
+        eventTime.setText(startTimeText + " to " + endTimeText);
+        eventLocation.setText("Location: Stanford");
         eventDescription.setText(event.getEventDesc());
     }
 }

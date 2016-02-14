@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
                 Intent intent = new Intent(getApplicationContext(), DayActivity.class);
                 Bundle extras = new Bundle();
                 extras.putString("YEAR",Integer.toString(date.getYear()));
-                extras.putString("MONTH", Integer.toString(date.getMonth()));
+                extras.putString("MONTH", Integer.toString(date.getMonth() + 1));
                 extras.putString("DAY", Integer.toString(date.getDay()));
                 extras.putString("DAYOFWEEK", dayOfTheWeek);
                 intent.putExtras(extras);
