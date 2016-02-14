@@ -5,7 +5,7 @@ import java.util.*;
  */
 public class Utility {
     private static final int MINUTES_IN_DAY = 24*60, HALF_HOUR = 30;
-    public static int[] getFrequencies(List<Integer> users) {
+    public static int[] getFrequencies(List<Integer> users, Date query) {
         int ret[] = new int[MINUTES_IN_DAY/HALF_HOUR];
 
         for(Integer id : users) {
@@ -14,8 +14,16 @@ public class Utility {
                 Event curEvent = Event.events_data.get(id2);
                 Date begin = curEvent.getEventStart();
                 Date end = curEvent.getEventEnd();
+
+                if(end.getDay() < query.getDay()) continue;
+                if(begin.getDay() > query.getDay()) continue;
+                
                 int idx1 = (begin.getHours() * 60 + begin.getMinutes()) / 30;
+                if(begin.getDay() < query.getDay())
+                    idx1 = 0;
                 int idx2 = (end.getHours() * 60 + end.getMinutes()) / 30;
+                if(end.getDay() > query.getDay())
+                    idx2 = ret.length - 1;
                 ret[idx1]++;
                 if(idx2 + 1 < ret.length) {
                     ret[idx2 + 1]--;
