@@ -7,7 +7,7 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.view.*;
 
-public class userPage extends AppCompatActivity {
+public class UserPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class userPage extends AppCompatActivity {
         firstButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(userPage.this, friends_page.class);
+                Intent intent = new Intent(UserPageActivity.this, FriendsPageActivity.class);
                 startActivity(intent);
             }
         });

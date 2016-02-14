@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.*;
 import android.content.*;
 
-public class friends_page extends AppCompatActivity {
+public class FriendsPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class friends_page extends AppCompatActivity {
     }
 
     public void nextScreen(View view) {
-        Intent intent = new Intent(friends_page.this, userPage.class);
+        Intent intent = new Intent(FriendsPageActivity.this, UserPageActivity.class);
         startActivity(intent);
     }
 }

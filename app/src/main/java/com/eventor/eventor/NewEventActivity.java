@@ -17,6 +17,7 @@ import java.util.Locale;
 
 public class NewEventActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     private TextView fromDateEtxt;
     private TextView toDateEtxt;
     private TextView fromTimeEtxt;
