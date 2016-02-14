@@ -17,7 +17,7 @@ public class GroupStatsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_group_stats);
         BarChart chart = (BarChart) findViewById(R.id.chart);
 
         BarData data = new BarData(getXAxisValues(), getDataSet());

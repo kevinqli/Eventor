@@ -33,6 +33,7 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name="com.eventor.eventor.FriendsPageActivity"></activity>
         <activity android:name="com.eventor.eventor.UserPageActivity"></activity>
+        <activity android:name=".GroupStatsActivity"></activity>
        <activity
             android:name="com.google.zxing.client.android.CaptureActivity"
             android:configChanges="orientation|keyboardHidden"

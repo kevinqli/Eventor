@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,28 +10,47 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.eventor.eventor.GroupPageActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/groupPicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Events"
-        android:textSize="40sp"
-        android:id="@+id/groupLabel"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:src="@drawable/profilepicture"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Events"
+        android:textSize="30sp"
+        android:id="@+id/groupLabel"
+        android:layout_below="@+id/groupPicture"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Description"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:id="@+id/groupDesc"
         android:layout_below="@+id/groupLabel"
         android:layout_centerHorizontal="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule an event within this group!"
+        android:id="@+id/statsButton"
+        android:layout_below="@+id/groupDesc"
+        android:layout_centerHorizontal="true"/>
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/eventTable"
-        android:layout_below="@+id/groupLabel"
         android:paddingTop="20dip"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="1">
+        android:stretchColumns="1"
+        android:layout_below="@+id/statsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
     </TableLayout>
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.eventor.eventor;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.ImageView;
@@ -22,6 +23,17 @@ public class GroupPageActivity extends AppCompatActivity implements View.OnClick
 
         TextView title = (TextView) findViewById(R.id.groupLabel);
         title.setText(group.getGroupTitle());
+
+        ImageView image = (ImageView) findViewById(R.id.groupPicture);
+        image.setImageResource(getResources().getIdentifier(group.getIcon(), "drawable", getPackageName()));
+
+        Button button = (Button) findViewById(R.id.statsButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), GroupStatsActivity.class));
+            }
+        });
         TextView description = (TextView) findViewById(R.id.groupDesc);
         description.setText(group.getGroupDesc());
 
@@ -41,7 +53,7 @@ public class GroupPageActivity extends AppCompatActivity implements View.OnClick
             */
             TextView txt = new TextView(this);
             txt.setText(Event.getEvent(event).getEventName());
-            txt.setTextSize(30);
+            txt.setTextSize(20);
             txt.setPadding(20, 20, 20, 20);
             tr.addView(txt);
             table.addView(tr);
